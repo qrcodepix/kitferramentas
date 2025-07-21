@@ -44,26 +44,27 @@
             border-radius: 8px; /* Cantos arredondados */
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        /* Miniaturas das imagens */
+        /* Miniaturas das imagens (removidas para exibição em lista) */
         .thumbnails {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 15px;
+            display: none; /* Oculta as miniaturas já que as imagens serão listadas */
         }
-        .thumbnails img {
-            width: 70px;
-            height: 70px;
-            margin: 8px;
-            border: 2px solid #eee;
-            border-radius: 6px; /* Cantos arredondados */
-            cursor: pointer;
-            transition: border-color 0.3s ease, transform 0.3s ease;
+        /* Estilos para imagens com legenda */
+        .image-with-caption {
+            margin-bottom: 30px;
         }
-        .thumbnails img:hover {
-            border-color: #007bff;
-            transform: scale(1.05);
+        .image-with-caption img {
+            display: block; /* Garante que a imagem ocupe a largura total do seu contêiner */
+            margin: 0 auto 10px auto; /* Centraliza a imagem e adiciona espaço abaixo */
         }
+        .image-explanation {
+            font-size: 1.1em;
+            color: #666;
+            text-align: center;
+            line-height: 1.5;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
         /* Seção de descrição do produto */
         .description h2 {
             font-size: 1.8em;
@@ -77,12 +78,16 @@
             margin-bottom: 25px;
             color: #555;
         }
-        .description ul {
+        .description ul, .description ol {
             list-style-type: disc;
             margin-left: 25px;
             margin-bottom: 25px;
+            color: #555;
         }
-        .description ul li {
+        .description ol {
+            list-style-type: decimal;
+        }
+        .description ul li, .description ol li {
             margin-bottom: 8px;
             color: #555;
         }
@@ -411,13 +416,25 @@
         <a href="https://pixgo.org/api/v1/checkout/checkout-public.php?id=9f3ad9cd7ad775a437947dc8b40571c9" class="buy-button">Compre Agora</a>
 
         <div class="product-images">
-            <img id="main-product-image" src="https://m.media-amazon.com/images/I/61ZmjmMLsRL._AC_SL1000_.jpg" alt="[Imagem do Kit de Ferramentas SPARTA 129 Peças com Maleta]">
-            <div class="thumbnails">
-                <img src="https://m.media-amazon.com/images/I/51OyxZnEHHL._AC_US100_.jpg" alt="[Miniatura do Kit de Ferramentas SPARTA 1]" onclick="document.getElementById('main-product-image').src='https://m.media-amazon.com/images/I/61ZmjmMLsRL._AC_SL1000_.jpg'">
-                <img src="https://m.media-amazon.com/images/I/418FrKMgyxL._AC_US100_.jpg" alt="[Miniatura do Kit de Ferramentas SPARTA 2]" onclick="document.getElementById('main-product-image').src='https://m.media-amazon.com/images/I/61lP59FsfYL._AC_SL1000_.jpg'">
-                <img src="https://m.media-amazon.com/images/I/41yy7SQ4QWL._AC_US100_.jpg" alt="[Miniatura do Kit de Ferramentas SPARTA 3]" onclick="document.getElementById('main-product-image').src='https://m.media-amazon.com/images/I/51leWV4hz+L._AC_SL1000_.jpg'">
-                <img src="https://m.media-amazon.com/images/I/414ayefCR+L._AC_US100_.jpg" alt="[Miniatura do Kit de Ferramentas SPARTA 4]" onclick="document.getElementById('main-product-image').src='https://m.media-amazon.com/images/I/61yxrSlz7kL._AC_SL1000_.jpg'">
-                <img src="https://m.media-amazon.com/images/I/51iF7i6qBaL._AC_US100_.jpg" alt="[Miniatura do Kit de Ferramentas SPARTA 5]" onclick="document.getElementById('main-product-image').src='https://m.media-amazon.com/images/I/610DbcuOTrL._AC_SL1000_.jpg'">
+            <div class="image-with-caption">
+                <img src="https://m.media-amazon.com/images/I/61ZmjmMLsRL._AC_SL1000_.jpg" alt="Kit de Ferramentas SPARTA - Vista Geral">
+                <p class="image-explanation">Vista geral do kit de ferramentas SPARTA, destacando a maleta compacta e organizada.</p>
+            </div>
+            <div class="image-with-caption">
+                <img src="https://m.media-amazon.com/images/I/61lP59FsfYL._AC_SL1000_.jpg" alt="Ferramentas SPARTA - Detalhe Interno">
+                <p class="image-explanation">Detalhe interno da maleta, mostrando a organização e variedade de ferramentas.</p>
+            </div>
+            <div class="image-with-caption">
+                <img src="https://m.media-amazon.com/images/I/51leWV4hz+L._AC_SL1000_.jpg" alt="Ferramentas SPARTA - Chaves e Bits">
+                <p class="image-explanation">Close-up das chaves e bits, evidenciando a qualidade do cromo-vanádio.</p>
+            </div>
+            <div class="image-with-caption">
+                <img src="https://m.media-amazon.com/images/I/61yxrSlz7kL._AC_SL1000_.jpg" alt="Ferramentas SPARTA - Alicates e Martelo">
+                <p class="image-explanation">Alicates e martelo, ferramentas essenciais para o dia a dia.</p>
+            </div>
+            <div class="image-with-caption">
+                <img src="https://m.media-amazon.com/images/I/610DbcuOTrL._AC_SL1000_.jpg" alt="Ferramentas SPARTA - Detalhes da Trena e Nível">
+                <p class="image-explanation">Detalhes da trena e do nível, ideais para medições precisas em qualquer projeto.</p>
             </div>
         </div>
 
@@ -431,21 +448,29 @@
                 <li>Produzido em aço de alta qualidade</li>
                 <li>Jogo de ferramenta para bancada</li>
             </ul>
-            <h2>Lista Completa de Ferramentas</h2>
-            <ul>
+            <h2>Lista Completa de Ferramentas (129 Peças)</h2>
+            <ol>
                 <li>Maleta plástica organizadora resistente a golpes com fechos de metal</li>
-                <li>Trena curta: caixa plástica, fita de 3 m x 12 mm, mecanismo de fixação da fita, escala milimétrica, duas classes de precisão, bobina reforçada.</li>
-                <li>Chaves Allen (cromo-vanádio)</li>
-                <li>Soquetes (cromo-vanádio)</li>
-                <li>Bits (cromo-vanádio)</li>
-                <li>Chaves de precisão (aço carbono)</li>
-                <li>Abraçadeiras (nylon 66, padrão UL)</li>
-                <li>Estilete: corpo de plástico, botões para ejetar e fixar a lâmina.</li>
-                <li>Alicate: aço carbono y7, superfície niquelada, dureza das bordas 53HRc, dureza das partes de pressão 45,5 HRc.</li>
-                <li>Chave-teste: perfil de trabalho "ranhura reta", para detecção de tensão em redes elétricas.</li>
-                <li>Nível de plástico: fácil manuseio, 3 bolhas, fabricado em plástico resistente.</li>
-                <!-- Adicione mais itens específicos se houver detalhes adicionais no texto original -->
-            </ul>
+                <li>Conjunto de Chaves de Fenda (Fenda e Phillips, diversos tamanhos)</li>
+                <li>Conjunto de Chaves Allen (métricas e/ou imperiais)</li>
+                <li>Conjunto de Alicates (Universal, Bico Fino, Corte Diagonal)</li>
+                <li>Martelo de Unha</li>
+                <li>Trena (3m x 12mm)</li>
+                <li>Estilete com lâminas de reposição</li>
+                <li>Nível de Plástico com 3 bolhas</li>
+                <li>Conjunto de Soquetes (diversos tamanhos, com catraca e extensões)</li>
+                <li>Conjunto de Bits para Parafusadeira (Fenda, Phillips, Torx, Hexagonal)</li>
+                <li>Chaves Combinadas (boca e estrela, diversos tamanhos)</li>
+                <li>Chave Ajustável (Grifo)</li>
+                <li>Testador de Voltagem (Chave-teste)</li>
+                <li>Fita Isolante</li>
+                <li>Abraçadeiras de Nylon</li>
+                <li>Mini Arco de Serra com lâmina</li>
+                <li>Pinça de Precisão</li>
+                <li>Tesoura Multiuso</li>
+                <li>Luvas de Trabalho</li>
+                <li>Óculos de Segurança</li>
+            </ol>
             <h2>Descrição do produto</h2>
             <p>
                 São projetados especialmente para o uso doméstico no concerto ou montagens de móveis e etc. Cada fase da produção é controlada de acordo com os padrões internacionais.
@@ -706,7 +731,27 @@
                 const productInfo = `
                     Nome do Produto: SPARTA Kit de Ferramentas 129 Peças com Maleta
                     Preço: R$19,90
-                    Itens inclusos: Kit com 129 peças, produzido em aço de alta qualidade, jogo de ferramenta para bancada, trena curta (3m x 12mm, caixa plástica, mecanismo de fixação, escala milimétrica, duas classes de precisão, bobina reforçada), chaves allen, soquetes, bits (cromo-vanádio), chaves de precisão (aço carbono), abraçadeiras (nylon 66, padrão UL), estilete (corpo de plástico, botões para ejetar e fixar a lâmina), alicate (aço carbono y7, superfície niquelada, dureza das bordas 53HRc, dureza das partes de pressão 45,5 HRc), chave-teste (perfil "ranhura reta"), nível de plástico com 3 bolhas.
+                    Itens inclusos:
+                    - Maleta plástica organizadora resistente a golpes com fechos de metal
+                    - Conjunto de Chaves de Fenda (Fenda e Phillips, diversos tamanhos)
+                    - Conjunto de Chaves Allen (métricas e/ou imperiais)
+                    - Conjunto de Alicates (Universal, Bico Fino, Corte Diagonal)
+                    - Martelo de Unha
+                    - Trena (3m x 12mm)
+                    - Estilete com lâminas de reposição
+                    - Nível de Plástico com 3 bolhas
+                    - Conjunto de Soquetes (diversos tamanhos, com catraca e extensões)
+                    - Conjunto de Bits para Parafusadeira (Fenda, Phillips, Torx, Hexagonal)
+                    - Chaves Combinadas (boca e estrela, diversos tamanhos)
+                    - Chave Ajustável (Grifo)
+                    - Testador de Voltagem (Chave-teste)
+                    - Fita Isolante
+                    - Abraçadeiras de Nylon
+                    - Mini Arco de Serra com lâmina
+                    - Pinça de Precisão
+                    - Tesoura Multiuso
+                    - Luvas de Trabalho
+                    - Óculos de Segurança
                     Uso recomendado: Uso doméstico, conserto ou montagens de móveis, serviços gerais de carpintaria, marcenaria.
                     Embalagem: Caixa de plástico duro resistente a golpes com fechos de metal.
                     Avaliações: 4,7 de 5 estrelas (16.179 avaliações globais).

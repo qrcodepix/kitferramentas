@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARTA Kit de Ferramentas 129 Peças com Maleta</title>
+    <style>
+        /* Estilos gerais do corpo da página */
+        body {
+            font-family: 'Inter', sans-serif; /* Usando a fonte "Inter" conforme instruído */
+            margin: 20px;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        /* Estilos do container principal da página */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px; /* Cantos arredondados */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        /* Estilos para títulos */
+        h1, h2, h3 {
+            color: #333;
+        }
+        /* Título principal do produto */
+        .product-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #2c3e50;
+        }
+        /* Seção de imagens do produto */
+        .product-images {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        /* Imagem principal do produto */
+        .product-images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* Cantos arredondados */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        /* Miniaturas das imagens */
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .thumbnails img {
+            width: 70px;
+            height: 70px;
+            margin: 8px;
+            border: 2px solid #eee;
+            border-radius: 6px; /* Cantos arredondados */
+            cursor: pointer;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+        .thumbnails img:hover {
+            border-color: #007bff;
+            transform: scale(1.05);
+        }
+        /* Seção de descrição do produto */
+        .description h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            color: #34495e;
+        }
+        .description p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #555;
+        }
+        .description ul {
+            list-style-type: disc;
+            margin-left: 25px;
+            margin-bottom: 25px;
+        }
+        .description ul li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        /* Seção de avaliações */
+        .reviews {
+            margin-top: 50px;
+            border-top: 2px solid #f0f0f0;
+            padding-top: 30px;
+        }
+        .reviews h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #34495e;
+        }
+        .overall-rating {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #ff9900;
+        }
+        .total-reviews {
+            text-align: center;
+            color: #777;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .rating-breakdown {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .rating-row {
+            display: flex;
+            align-items: center;
+            width: 90%;
+            max-width: 500px;
+            margin-bottom: 10px;
+        }
+        .rating-label {
+            width: 80px;
+            text-align: right;
+            margin-right: 15px;
+            font-weight: bold;
+            color: #666;
+        }
+        .rating-bar-container {
+            flex-grow: 1;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            height: 18px;
+            overflow: hidden;
+        }
+        .rating-bar {
+            height: 100%;
+            background-color: #ffc107;
+            text-align: right;
+            color: #333;
+            font-size: 0.9em;
+            line-height: 18px;
+            padding-right: 5px;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        /* Estilos para o botão "Compre Agora" */
+        .buy-button {
+            display: block;
+            width: 90%;
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 18px 25px;
+            background: linear-gradient(to right, #28a745, #218838); /* Gradiente verde */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 8px; /* Cantos arredondados */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .buy-button:hover {
+            background: linear-gradient(to right, #218838, #1e7e34);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Preço do produto */
+        .product-price {
+            font-size: 3em;
+            font-weight: bold;
+            color: #dc3545; /* Cor vermelha para o preço */
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .product-price span {
+            font-size: 0.6em;
+            vertical-align: super;
+        }
+
+        /* Seção de oferta relâmpago */
+        .flash-offer {
+            background-color: #ff7f00; /* Laranja em destaque */
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px auto;
+            max-width: 600px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            animation: pulse 1.5s infinite; /* Animação de pulso */
+        }
+        .flash-offer h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .countdown {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        .countdown span {
+            display: inline-block;
+            min-width: 40px;
+        }
+
+        /* Animação de pulso para a oferta relâmpago */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        /* Estilos para as opções de filtro e classificação das avaliações */
+        .review-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .review-options select {
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            font-size: 1em;
+            color: #555;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .review-options select:hover,
+        .review-options select:focus {
+            border-color: #007bff;
+        }
+        .review-item {
+            background-color: #fdfdfd;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+        }
+        .review-item .author {
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 5px;
+        }
+        .review-item .rating {
+            color: #ff9900;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        .review-item .date {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        .review-item .content {
+            line-height: 1.6;
+            color: #444;
+        }
+        .review-item .verified-purchase {
+            font-size: 0.85em;
+            color: #28a745;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .review-item .variant {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Estilos para a nova seção de Pergunte ao Especialista */
+        .ask-expert-section {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #e9f7ef; /* Fundo suave para a seção */
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .ask-expert-section h2 {
+            color: #28a745;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .ask-expert-section textarea {
+            width: 90%;
+            max-width: 600px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            resize: vertical;
+            min-height: 100px;
+            box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura */
+        }
+        .ask-expert-section button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .ask-expert-section button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .ask-expert-response {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #f0f8ff; /* Fundo suave para a resposta */
+            border: 1px solid #b0e0e6;
+            border-radius: 8px;
+            text-align: left;
+            min-height: 50px;
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.6;
+            white-space: pre-wrap; /* Preserva quebras de linha e espaços */
+        }
+        .ask-expert-response.loading {
+            text-align: center;
+            font-style: italic;
+            color: #888;
+        }
+
+        /* Responsividade aprimorada */
+        @media (max-width: 768px) {
+            .product-title {
+                font-size: 1.8em;
+            }
+            .product-price {
+                font-size: 2.5em;
+            }
+            .flash-offer h3 {
+                font-size: 1.4em;
+            }
+            .countdown {
+                font-size: 1.8em;
+            }
+            .buy-button {
+                font-size: 1.3em;
+                padding: 15px 20px;
+            }
+            .rating-label {
+                width: 60px;
+                font-size: 0.9em;
+            }
+            .rating-bar {
+                font-size: 0.7em;
+            }
+            .review-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            .review-options select {
+                width: 90%;
+            }
+            .ask-expert-section textarea {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="product-title">SPARTA Kit de Ferramentas 129 Peças com Maleta</h1>
+
+        <!-- Preço do produto -->
+        <div class="product-price">
+            <span>R$</span>19,90
+        </div>
+
+        <!-- Seção de Oferta Relâmpago com Cronômetro -->
+        <div class="flash-offer">
+            <h3>Oferta Relâmpago!</h3>
+            <p>A oferta termina em:</p>
+            <div id="countdown" class="countdown">
+                <span id="minutes">00</span>m
+                <span id="seconds">00</span>s
+            </div>
+        </div>
+
+        <!-- Botão de Compra Principal -->
+        <a href="https://pixgo.org/api/v1/checkout/checkout-public.php?id=9f3ad9cd7ad775a437947dc8b40571c9" class="buy-button">Compre Agora</a>
+
+        <div class="product-images">
+            <img id="main-product-image" src="https://m.media-amazon.com/images/I/61ZmjmMLsRL._AC_SL1000_.jpg" alt="[Imagem do Kit de Ferramentas SPARTA 129 Peças com Maleta]">
+            <div class="thumbnails">
+                <img src="https://m.media-amazon.com/images/I/51OyxZnEHHL._AC_US100_.jpg" alt="[Miniatura do Kit de Ferramentas SPARTA 1]" onclick="document.getElementById('main-product-image').src='https://m.media-amazon.com/images/I/61ZmjmMLsRL._AC_SL1000_.jpg'">
+                <img src="https://m.media-amazon.com/images/I/418FrKMgyxL._AC_US100_.jpg" alt="[Miniatura do Kit de Ferramentas SPARTA 2]" onclick="document.getElementById('main-product-image').src='https://m.media-amazon.com/images/I/61lP59FsfYL._AC_SL1000_.jpg'">
+                <img src="https://m.media-amazon.com/images/I/41yy7SQ4QWL._AC_US100_.jpg" alt="[Miniatura do Kit de Ferramentas SPARTA 3]" onclick="document.getElementById('main-product-image').src='https://m.media-amazon.com/images/I/51leWV4hz+L._AC_SL1000_.jpg'">
+                <img src="https://m.media-amazon.com/images/I/414ayefCR+L._AC_US100_.jpg" alt="[Miniatura do Kit de Ferramentas SPARTA 4]" onclick="document.getElementById('main-product-image').src='https://m.media-amazon.com/images/I/61yxrSlz7kL._AC_SL1000_.jpg'">
+                <img src="https://m.media-amazon.com/images/I/51iF7i6qBaL._AC_US100_.jpg" alt="[Miniatura do Kit de Ferramentas SPARTA 5]" onclick="document.getElementById('main-product-image').src='https://m.media-amazon.com/images/I/610DbcuOTrL._AC_SL1000_.jpg'">
+            </div>
+        </div>
+
+        <!-- Outro botão de compra -->
+        <a href="https://pixgo.org/api/v1/checkout/checkout-public.php?id=9f3ad9cd7ad775a437947dc8b40571c9" class="buy-button">Compre Agora</a>
+
+        <div class="description">
+            <h2>Sobre este item</h2>
+            <ul>
+                <li>Kit com 129 peças</li>
+                <li>Produzido em aço de alta qualidade</li>
+                <li>Jogo de ferramenta para bancada</li>
+            </ul>
+            <h2>Lista Completa de Ferramentas</h2>
+            <ul>
+                <li>Maleta plástica organizadora resistente a golpes com fechos de metal</li>
+                <li>Trena curta: caixa plástica, fita de 3 m x 12 mm, mecanismo de fixação da fita, escala milimétrica, duas classes de precisão, bobina reforçada.</li>
+                <li>Chaves Allen (cromo-vanádio)</li>
+                <li>Soquetes (cromo-vanádio)</li>
+                <li>Bits (cromo-vanádio)</li>
+                <li>Chaves de precisão (aço carbono)</li>
+                <li>Abraçadeiras (nylon 66, padrão UL)</li>
+                <li>Estilete: corpo de plástico, botões para ejetar e fixar a lâmina.</li>
+                <li>Alicate: aço carbono y7, superfície niquelada, dureza das bordas 53HRc, dureza das partes de pressão 45,5 HRc.</li>
+                <li>Chave-teste: perfil de trabalho "ranhura reta", para detecção de tensão em redes elétricas.</li>
+                <li>Nível de plástico: fácil manuseio, 3 bolhas, fabricado em plástico resistente.</li>
+                <!-- Adicione mais itens específicos se houver detalhes adicionais no texto original -->
+            </ul>
+            <h2>Descrição do produto</h2>
+            <p>
+                São projetados especialmente para o uso doméstico no concerto ou montagens de móveis e etc. Cada fase da produção é controlada de acordo com os padrões internacionais.
+                O estilete tem corpo de plástico e botões para ejetar e fixar a lâmina. O alicate é projetado para atender um vasto leque de trabalhos de montagem e reparação onde é exigido grande precisão. As ferramentas são produzidas de aço carbono y7 e tem superfície niquelada. A dureza das bordas das lâminas são 53HRc. A dureza das partes de pressão é 45,5 HRc. A substituição da lâmina é feita a mão pela parte traseira do estilete. Projetado para cortar papel, papelão e outros materiais quando a força aplicada não é grande.
+                A chave-teste com perfil de trabalho "ranhura reta" é projetada para detecção de tensão nas redes elétricas.
+                Nível de plástico de fácil manuseio com 3 bolhas fabricado em plástico resistente. Ideal para serviços gerais de carpintaria, marcenaria e outros.
+            </p>
+        </div>
+
+        <!-- Mais um botão de compra antes das avaliações -->
+        <a href="https://pixgo.org/api/v1/checkout/checkout-public.php?id=9f3ad9cd7ad775a437947dc8b40571c9" class="buy-button">Compre Agora</a>
+
+        <!-- Seção de Pergunte ao Especialista -->
+        <div class="ask-expert-section">
+            <h2>Pergunte ao Especialista ✨</h2>
+            <textarea id="expert-question" placeholder="Tem alguma pergunta sobre o kit de ferramentas? Digite aqui!"></textarea>
+            <button id="ask-button">Perguntar</button>
+            <div id="expert-response" class="ask-expert-response">
+                <!-- A resposta do especialista aparecerá aqui -->
+            </div>
+        </div>
+
+        <div class="reviews">
+            <h2>Avaliações de Clientes</h2>
+            <div class="overall-rating">4,7 de 5 estrelas</div>
+            <div class="total-reviews">16.179 avaliações de clientes de Brasil</div>
+
+            <!-- Opções de Classificação e Filtro -->
+            <div class="review-options">
+                <select id="sort-by">
+                    <option value="best">Classificar por: Melhores avaliações</option>
+                    <option value="recent">Classificar por: Mais recentes</option>
+                </select>
+
+                <select id="filter-by-reviewer">
+                    <option value="all">Filtrar por tipo de avaliador: Todos os avaliadores</option>
+                    <option value="verified">Filtrar por tipo de avaliador: Apenas compras verificadas</option>
+                </select>
+
+                <select id="filter-by-stars">
+                    <option value="all-stars">Filtrar por contagem de estrelas: Todas as estrelas</option>
+                    <option value="5-star">Somente 5 estrelas</option>
+                    <option value="4-star">Somente 4 estrelas</option>
+                    <option value="3-star">Somente 3 estrelas</option>
+                    <option value="2-star">Somente 2 estrelas</option>
+                    <option value="1-star">Somente 1 estrela</option>
+                    <option value="positive">Avaliações positivas</option>
+                    <option value="critical">Avaliações críticas</option>
+                </select>
+
+                <select id="filter-by-variant">
+                    <option value="all-variants">Filtrar por tipo de variante: Todas as variantes</option>
+                    <option value="129-pcs">Estilo: 129 pçs</option>
+                    <option value="165-pcs">Estilo: 165 pçs</option>
+                </select>
+
+                <select id="filter-by-media">
+                    <option value="all-media">Filtrar por tipo de mídia: Texto, imagem, vídeo</option>
+                    <option value="media-only">Somente análises de imagem e vídeo</option>
+                </select>
+            </div>
+
+            <div class="rating-breakdown">
+                <div class="rating-row">
+                    <span class="rating-label">5 estrelas</span>
+                    <div class="rating-bar-container"><div class="rating-bar" style="width: 81%;">81%</div></div>
+                </div>
+                <div class="rating-row">
+                    <span class="rating-label">4 estrelas</span>
+                    <div class="rating-bar-container"><div class="rating-bar" style="width: 14%;">14%</div></div>
+                </div>
+                <div class="rating-row">
+                    <span class="rating-label">3 estrelas</span>
+                    <div class="rating-bar-container"><div class="rating-bar" style="width: 3%;">3%</div></div>
+                </div>
+                <div class="rating-row">
+                    <span class="rating-label">2 estrelas</span>
+                    <div class="rating-bar-container"><div class="rating-bar" style="width: 1%;">1%</div></div>
+                </div>
+                <div class="rating-row">
+                    <span class="rating-label">1 estrela</span>
+                    <div class="rating-bar-container"><div class="rating-bar" style="width: 1%;">1%</div></div>
+                </div>
+            </div>
+
+            <h3>Avaliações Principais</h3>
+            <div class="review-list">
+                <div class="review-item">
+                    <div class="author">Belarmino Couto <span class="verified-purchase">Compra verificada</span></div>
+                    <div class="rating">★★★★★</div>
+                    <div class="date">Avaliado no Brasil em 3 de julho de 2025</div>
+                    <div class="variant">Estilo: 129 pçs</div>
+                    <div class="content">
+                        Entrega super rápida, produto chegou com 2 dias e sem danos. Todas as peças vieram certas e funcionando. É uma ótima escolha para consertos domésticos do dia-a-dia. Todas as peças aparentam ser de boa qualidade, exceto a trena, mas ainda sim funciona bem. No geral estou satisfeito com a compra e recomendo o produto.
+                        <br><a href="[Link para o vídeo]" style="color: #007bff; text-decoration: none;">Clique para reproduzir o vídeo</a>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="author">stephanie monique <span class="verified-purchase">Compra verificada</span></div>
+                    <div class="rating">★★★★★</div>
+                    <div class="date">Avaliado no Brasil em 10 de junho de 2025</div>
+                    <div class="variant">Estilo: 129 pçs</div>
+                    <div class="content">
+                        Comprei o kit para o meu marido e ele adorou! Super completo e muito útil para o dia a dia. Vem com as principais ferramentas para uso doméstico e ainda é organizado em uma maleta prática. Excelente custo-benefício, recomendo demais!
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="author">Calebe Ferreira <span class="verified-purchase">Compra verificada</span></div>
+                    <div class="rating">★★★★★</div>
+                    <div class="date">Avaliado no Brasil em 26 de junho de 2025</div>
+                    <div class="variant">Estilo: 129 pçs</div>
+                    <div class="content">
+                        muito bom custo benefício. possui todas as ferramentas que são necessárias em casa
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="author">Fernando Vitorino Soares <span class="verified-purchase">Compra verificada</span></div>
+                    <div class="rating">★★★★☆</div>
+                    <div class="date">Avaliado no Brasil em 9 de julho de 2025</div>
+                    <div class="variant">Estilo: 165 pçs</div>
+                    <div class="content">
+                        Ótima pra ter em casa, bem sortida e maleta fácil de guardar bom pra ter em casa.
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="author">Gabriela <span class="verified-purchase">Compra verificada</span></div>
+                    <div class="rating">★★★★★</div>
+                    <div class="date">Avaliado no Brasil em 18 de julho de 2025</div>
+                    <div class="variant">Estilo: 129 pçs</div>
+                    <div class="content">
+                        Gostei muito do produto! Correspondeu as minhas expectativas, chegou em perfeito estado e dentro do prazo. Recomendo!
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="author">Kevin Christhian <span class="verified-purchase">Compra verificada</span></div>
+                    <div class="rating">★★★★★</div>
+                    <div class="date">Avaliado no Brasil em 13 de julho de 2025</div>
+                    <div class="variant">Estilo: 129 pçs</div>
+                    <div class="content">
+                        É o segundo q compro e esse segundo é foi pra presente, útil, de boa qualidade e bonito
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="author">Manoela <span class="verified-purchase">Compra verificada</span></div>
+                    <div class="rating">★★★★★</div>
+                    <div class="date">Avaliado no Brasil em 16 de julho de 2025</div>
+                    <div class="variant">Estilo: 129 pçs</div>
+                    <div class="content">
+                        Pelo preço valeu a pena. Mais não é muito resistente.. mas para fazer reparos domésticos tá ótimo
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="author">Nubia <span class="verified-purchase">Compra verificada</span></div>
+                    <div class="rating">★★★★★</div>
+                    <div class="date">Avaliado no Brasil em 20 de junho de 2025</div>
+                    <div class="variant">Estilo: 129 pçs</div>
+                    <div class="content">
+                        Super prático e funcional, a maleta é uma forma super organizada para armazenar, ferramentas básicas que não podem faltar em uma casa
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="author">Cliente Amazon <span class="verified-purchase">Compra verificada</span></div>
+                    <div class="rating">★★★★★</div>
+                    <div class="date">Avaliado no Brasil em 15 de maio de 2025</div>
+                    <div class="content">
+                        Sou assíduo comprador de ferramentas premium de alta qualidade, como Whira, Wera, Knipex entre outras, mas resolvi comprar esse kit para dar de presente, e me surpreendi com a qualidade de fabricação, qualidade dos acabamentos e precisão dos encaixes. Pelo valor o custo benefício se torna excelente e para usuários domésticos esse produto, sem bem cuidado, durará para o resto da vida. Vale a compra com certeza!
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="author">Cliente Amazon <span class="verified-purchase">Compra verificada</span></div>
+                    <div class="rating">★★★★★</div>
+                    <div class="date">Avaliado no Brasil em 1 de julho de 2025</div>
+                    <div class="content">
+                        Entrega rápida e o melhor; veio perfeitamente igual ao anunciado, bem lacrado e muito bem embalado
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Último botão de compra no final da página -->
+        <a href="https://pixgo.org/api/v1/checkout/checkout-public.php?id=9f3ad9cd7ad775a437947dc8b40571c9" class="buy-button">Compre Agora</a>
+    </div>
+
+    <script>
+        // JavaScript para a funcionalidade de troca de imagem e cronômetro
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainImage = document.getElementById('main-product-image');
+            const thumbnails = document.querySelectorAll('.thumbnails img');
+
+            // Função para trocar a imagem principal ao clicar na miniatura
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', () => {
+                    // Extrai a URL da imagem de alta resolução do atributo 'onclick'
+                    const newSrc = thumbnail.getAttribute('onclick').match(/'(.*?)'/)[1];
+                    mainImage.src = newSrc;
+                });
+            });
+
+            // Lógica do cronômetro de oferta
+            const countdownElement = document.getElementById('countdown');
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+
+            // Define a data final da oferta para 40 minutos a partir do carregamento da página
+            // Isso garante que o cronômetro sempre comece em 40 minutos para cada novo cliente/sessão
+            let endDate = new Date();
+            endDate.setMinutes(endDate.getMinutes() + 40);
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = endDate.getTime() - now;
+
+                // Cálculos para minutos e segundos
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Exibe os resultados no elemento
+                minutesElement.textContent = String(minutes).padStart(2, '0');
+                secondsElement.textContent = String(seconds).padStart(2, '0');
+
+                // Se a contagem regressiva terminar
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    countdownElement.innerHTML = "OFERTA ENCERRADA!";
+                    // Opcional: desabilitar botões de compra ou remover a seção de oferta
+                }
+            }
+
+            // Atualiza o cronômetro a cada segundo
+            const countdownInterval = setInterval(updateCountdown, 1000);
+            updateCountdown(); // Chama a função uma vez imediatamente para evitar atraso inicial
+
+            // Lógica para a seção "Pergunte ao Especialista"
+            const askButton = document.getElementById('ask-button');
+            const expertQuestionInput = document.getElementById('expert-question');
+            const expertResponseDiv = document.getElementById('expert-response');
+
+            askButton.addEventListener('click', async () => {
+                const question = expertQuestionInput.value.trim();
+                if (!question) {
+                    expertResponseDiv.textContent = "Por favor, digite sua pergunta.";
+                    return;
+                }
+
+                expertResponseDiv.textContent = "Pensando na resposta... ✨";
+                expertResponseDiv.classList.add('loading');
+
+                // Informações do produto para contextualizar a LLM
+                const productInfo = `
+                    Nome do Produto: SPARTA Kit de Ferramentas 129 Peças com Maleta
+                    Preço: R$19,90
+                    Itens inclusos: Kit com 129 peças, produzido em aço de alta qualidade, jogo de ferramenta para bancada, trena curta (3m x 12mm, caixa plástica, mecanismo de fixação, escala milimétrica, duas classes de precisão, bobina reforçada), chaves allen, soquetes, bits (cromo-vanádio), chaves de precisão (aço carbono), abraçadeiras (nylon 66, padrão UL), estilete (corpo de plástico, botões para ejetar e fixar a lâmina), alicate (aço carbono y7, superfície niquelada, dureza das bordas 53HRc, dureza das partes de pressão 45,5 HRc), chave-teste (perfil "ranhura reta"), nível de plástico com 3 bolhas.
+                    Uso recomendado: Uso doméstico, conserto ou montagens de móveis, serviços gerais de carpintaria, marcenaria.
+                    Embalagem: Caixa de plástico duro resistente a golpes com fechos de metal.
+                    Avaliações: 4,7 de 5 estrelas (16.179 avaliações globais).
+                `;
+
+                const prompt = `Você é um especialista em ferramentas. Responda à seguinte pergunta sobre o produto "SPARTA Kit de Ferramentas 129 Peças com Maleta", usando as informações fornecidas e de forma útil e concisa. Se a pergunta não for diretamente sobre o produto, tente relacioná-la ao uso de ferramentas ou ao produto em questão.
+
+                Informações do Produto:
+                ${productInfo}
+
+                Pergunta do Cliente: "${question}"
+
+                Resposta do Especialista:`;
+
+                try {
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; // Se você quiser usar modelos diferentes de gemini-2.0-flash ou imagen-3.0-generate-002, forneça uma chave de API aqui. Caso contrário, deixe como está.
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        expertResponseDiv.textContent = text;
+                    } else {
+                        expertResponseDiv.textContent = "Desculpe, não consegui gerar uma resposta no momento. Tente novamente mais tarde.";
+                    }
+                } catch (error) {
+                    console.error("Erro ao chamar a API Gemini:", error);
+                    expertResponseDiv.textContent = "Ocorreu um erro ao conectar com o especialista. Por favor, tente novamente.";
+                } finally {
+                    expertResponseDiv.classList.remove('loading');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
